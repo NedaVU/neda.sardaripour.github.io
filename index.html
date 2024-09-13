@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Neda Sardaripour's Portfolio</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+
+        /* Sidebar navigation */
+        .sidebar {
+            background-color: #2c3e50;
+            color: white;
+            height: 100vh;
+            padding-top: 50px;
+            width: 250px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            text-align: center;
+        }
+
+        .sidebar a {
+            display: block;
+            color: white;
+            padding: 20px;
+            text-decoration: none;
+            font-size: 18px;
+            text-transform: uppercase;
+            margin-bottom: 10px;
+        }
+
+        .sidebar a.active, .sidebar a:hover {
+            font-weight: bold;
+            border-left: 5px solid #f9aa33;
+            background-color: #34495e;
+        }
+
+        .content {
+            margin-left: 260px;
+            padding: 50px;
+            background-color: #ecf0f1;
+            flex-grow: 1;
+            min-height: 100vh;
+        }
+
+        .content h1, .content h2, .content p {
+            margin-bottom: 20px;
+        }
+
+        .content .about-container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .content .about-text {
+            width: 60%;
+        }
+
+        .content .about-image {
+            width: 30%;
+            max-width: 200px;
+        }
+
+        .content .about-image img {
+            width: 100%;
+            border-radius: 10px;
+        }
+
+        /* Bold effect on titles in sidebar as you scroll */
+        section {
+            margin-bottom: 100px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #2c3e50;
+            color: white;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+
+        .resume-download {
+            background-color: #91a6ed;
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+
+        .resume-download:hover {
+            background-color: #5c45a0;
+        }
+
+        /* Scroll reveal sections hidden by default */
+        .reveal {
+            opacity: 0;
+            transform: translateY(100px);
+            transition: all 0.6s ease-in-out;
+        }
+
+        .reveal.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+
+<!-- Sidebar navigation -->
+<div class="sidebar">
+    <a href="#welcome" class="active">Welcome</a>
+    <a href="#about">About</a>
+    <a href="#education">Education</a>
+    <a href="#projects">Projects</a>
+    <a href="#skills">Skills</a>
+    <a href="#contact">Contact</a>
+</div>
+
+<div class="content">
+    <!-- Welcome Section -->
+    <section id="welcome">
+        <h1>Neda Sardaripour</h1>
+        <p>PhD Candidate in Biomedical Engineering | Machine Learning | Systems Neuroscience</p>
+    </section>
+
+    <!-- About Me Section -->
+    <section id="about" class="about-container">
+        <div class="about-text">
+            <h2>About Me</h2>
+            <p>Hello! Welcome to my personal portfolio! I am Neda, a PhD student at Vanderbilt University. My research focuses on systems neuroscience, computational modeling of the human brain, and machine learning applications in neuroimaging.</p>
+        </div>
+        <div class="about-image">
+            <img src="Neda.jpg" alt="Neda Sardaripour">
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section id="education" class="education-section reveal">
+        <h2>Education</h2>
+        <div class="education-item">
+            <h3>Vanderbilt University <span class="location">Nashville, TN</span></h3>
+            <p class="degree">Ph.D. Candidate in Biomedical Engineering</p>
+            <p class="research-focus">Research focus: Systems/Network Neuroscience, Machine Learning, Connectomes in Rubinov Lab</p>
+            <p class="years">2021 – 2025 (expected)</p>
+        </div>
+        <div class="education-item">
+            <h3>K. N. Toosi University of Technology <span class="location">Tehran, Iran</span></h3>
+            <p class="degree">M.Sc. in Biomedical Engineering, Bioelectronics</p>
+            <p class="research-focus">Member of Machine Vision and Medical Image Processing Lab</p>
+            <p class="years">2016 – 2020</p>
+        </div>
+        <div class="education-item">
+            <h3>Shiraz University <span class="location">Shiraz, Iran</span></h3>
+            <p class="degree">B.Sc. in Electrical Engineering, Electronics</p>
+            <p class="years">2012 – 2016</p>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="reveal">
+        <h2>Projects</h2>
+        <div class="row">
+            <div class="col-md-4">
+                <h3>Project 1</h3>
+                <img src="project1.jpg" class="img-fluid" alt="Project 1 Image">
+                <p>Brief description of the project.</p>
+            </div>
+            <div class="col-md-4">
+                <h3>Project 2</h3>
+                <img src="project2.jpg" class="img-fluid" alt="Project 2 Image">
+                <p>Brief description of the project.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="reveal">
+        <h2>Skills</h2>
+        <ul>
+            <li><strong>amsnf :</strong> blabaabl.</li>
+            <li><strong>ljns:</strong> labloblo.</li>
+            <li><strong>C,sc sn:</strong> Ablehblah bilih.</li>
+        </ul>
+    </section>
+
+    <!-- Resume Section -->
+    <section id="resume" class="resume reveal">
+        <h2>Resume</h2>
+        <p>You can download my resume as a PDF by clicking the link below:</p>
+        <a href="files/Neda_s_Resume-Sep10.pdf" class="resume-download" download>Download My Resume</a>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="reveal">
+        <h2>Contact</h2>
+        <p>You can reach me at: <a href="mailto:neda.sardaripour@gmail.com">neda.sardaripour@gmail.com</a></p>
+    </section>
+</div>
+
+<footer>
+    <p>&copy; 2024 Neda Sardaripour</p>
+</footer>
+
+<!-- Scroll reveal logic and bold effect on sidebar -->
+<script>
+    function revealSections() {
+        var reveals = document.querySelectorAll('.reveal');
+        for (var i = 0; i < reveals.length; i++) {
+            var windowHeight = window.innerHeight;
+            var elementTop = reveals[i].getBoundingClientRect().top;
+            var elementVisible = 150;
+            if (elementTop < windowHeight - elementVisible) {
+                reveals[i].classList.add('show');
+            }
+        }
+    }
+
+    function updateActiveLink() {
+        var sections = document.querySelectorAll('section');
+        var scrollPos = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop;
+        sections.forEach(function (section) {
+            var sectionTop = section.offsetTop - 100;
+            var sectionHeight = section.offsetHeight;
+            var id = section.getAttribute('id');
+            var link = document.querySelector(`.sidebar a[href="#${id}"]`);
+
+            if (scrollPos >= sectionTop && scrollPos < sectionTop + sectionHeight) {
+                link.classList.add('active');
+            } else {
+                link.classList.remove('active');
+            }
+        });
+    }
+
+    window.addEventListener('scroll', function() {
+        revealSections();
+        updateActiveLink();
+    });
+
+    // Initial trigger for reveal and navigation
+    revealSections();
+    updateActiveLink();
+</script>
+
+</body>
+</html>
