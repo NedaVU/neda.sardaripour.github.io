@@ -11,4 +11,3 @@ I am Neda Sardaripour, a PhD student at Vanderbilt University specializing in sy
 - [Research](research.md)
 - [Publications](publications.md)
 - [Contact](contact.md)
-
