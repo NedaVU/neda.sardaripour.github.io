@@ -11,6 +11,8 @@
             margin: 0;
             padding: 0;
             display: flex;
+            flex-direction: column;
+            min-height: 100vh;
         }
 
         /* Sidebar navigation */
@@ -50,7 +52,6 @@
             padding: 50px;
             background-color: #ecf0f1;
             flex-grow: 1;
-            min-height: 100vh;
         }
 
         .content h1, .content h2, .content p {
@@ -84,9 +85,10 @@
 
         footer {
             background-color: #000; /* Black background */
-            color: white; /* White text */
-            padding: 20px;
+            color: #999; /* Light gray text */
+            padding: 10px 0; /* Small padding */
             text-align: center;
+            font-size: 12px; /* Smaller text size */
         }
 
         .resume-download {
@@ -209,7 +211,7 @@
 
 <!-- Updated Footer -->
 <footer>
-    <p>&copy; 2024 Neda Sardaripour. All rights reserved.</p>
+    <p>&copy; 2024 Neda Sardaripour. All rights reserved. | Design: HTML5 UP</p>
 </footer>
 
 <!-- Scroll reveal logic and bold effect on sidebar -->
@@ -228,30 +230,27 @@
 
     function updateActiveLink() {
         var sections = document.querySelectorAll('section');
-        var scrollPos = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop;
+        var scrollY = window.pageYOffset;
         sections.forEach(function (section) {
-            var sectionTop = section.offsetTop - 100;
+            var sectionTop = section.offsetTop - 150;
             var sectionHeight = section.offsetHeight;
-            var id = section.getAttribute('id');
-            var link = document.querySelector(`.sidebar a[href="#${id}"]`);
-
-            if (scrollPos >= sectionTop && scrollPos < sectionTop + sectionHeight) {
-                link.classList.add('active');
+            var sectionId = section.getAttribute('id');
+            if (scrollY >= sectionTop && scrollY < sectionTop + sectionHeight) {
+                document.querySelector('.sidebar a[href*=' + sectionId + ']').classList.add('active');
             } else {
-                link.classList.remove('active');
+                document.querySelector('.sidebar a[href*=' + sectionId + ']').classList.remove('active');
             }
         });
     }
 
-    window.addEventListener('scroll', function() {
+    window.addEventListener('scroll', function () {
         revealSections();
         updateActiveLink();
     });
 
-    // Initial trigger for reveal and navigation
+    // Trigger initial reveal and link update
     revealSections();
     updateActiveLink();
 </script>
-
 </body>
 </html>
