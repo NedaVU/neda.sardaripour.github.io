@@ -1,14 +1,12 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Neda Sardaripour's Portfolio</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Neda Sardaripour's Portfolio</title>
+    
+    <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <div class="container">
-        <h1 class="text-center">Neda Sardaripour</h1>
-        <p class="lead text-center">PhD Student in Biomedical Engineering</p>
-    </div>
 
     <style>
         body {
@@ -37,6 +35,16 @@
             background-color: #333;
             color: white;
         }
+        .resume-download {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+        .resume-download:hover {
+            background-color: #45a049;
+        }
     </style>
 </head>
 <body>
@@ -51,6 +59,7 @@
     <p>Welcome to my personal portfolio! I am Neda, a PhD student at Vanderbilt University. My research focuses on systems neuroscience, computational modeling of the human brain, and machine learning applications in neuroimaging.</p>
 </section>
 
+<!-- Corrected Projects Section -->
 <section>
     <h2>Projects</h2>
     <div class="row">
@@ -66,23 +75,23 @@
         </div>
     </div>
 </section>
-    
+
+<!-- Project Description List Section -->
 <section>
-    <h2>Projects</h2>
+    <h2>Additional Projects</h2>
     <ul>
         <li><strong>Neuroimaging and Genetics Integration:</strong> Investigating the link between brain networks and gene networks.</li>
         <li><strong>PsyTrack Behavioral Analysis:</strong> Analyzing decision-making tasks using dynamic models.</li>
         <li><strong>Canonical Correlation Analysis (CCA):</strong> Applying CCA to identify relationships between gene modules and brain networks.</li>
     </ul>
 </section>
-    
-    <!-- Resume Section -->
-    <section class="resume">
-        <h2>Resume</h2>
-        <p>You can download my resume as a PDF by clicking the link below:</p>
-        <a href="files/Neda_Sardaripour_Resume.pdf" class="resume-download" download>Download My Resume</a>
-    </section>
 
+<!-- Resume Section -->
+<section class="resume">
+    <h2>Resume</h2>
+    <p>You can download my resume as a PDF by clicking the link below:</p>
+    <a href="files/Neda_Sardaripour_Resume.pdf" class="resume-download" download>Download My Resume</a>
+</section>
 
 <section>
     <h2>Contact</h2>
@@ -92,6 +101,9 @@
 <footer>
     <p>&copy; 2024 Neda Sardaripour</p>
 </footer>
+
+<!-- Bootstrap JS (Optional for interactive elements like dropdowns) -->
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
 
 </body>
 </html>
