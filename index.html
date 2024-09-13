@@ -27,6 +27,22 @@
             border-radius: 10px;
             box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
         }
+        .about-container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .about-text {
+            width: 60%;
+        }
+        .about-image {
+            width: 30%;
+            max-width: 200px;
+        }
+        .about-image img {
+            width: 100%;
+            border-radius: 50%;
+        }
         footer {
             text-align: center;
             padding: 20px;
@@ -43,6 +59,16 @@
         .resume-download:hover {
             background-color: #5c45a0;
         }
+        /* Scroll reveal sections hidden by default */
+        .reveal {
+            opacity: 0;
+            transform: translateY(100px);
+            transition: all 0.6s ease-in-out;
+        }
+        .reveal.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
     </style>
 </head>
 <body>
@@ -52,13 +78,19 @@
     <p>PhD Student in Biomedical Engineering | Machine Learning | Systems Neuroscience</p>
 </header>
 
-<section>
-    <h2>About Me</h2>
-    <p>Hello! Welcome to my personal portfolio! I am Neda, a PhD student at Vanderbilt University. My research focuses on systems neuroscience, computational modeling of the human brain, and machine learning applications in neuroimaging.</p>
+<!-- About Me Section with Image on the Right -->
+<section class="about-container">
+    <div class="about-text">
+        <h2>About Me</h2>
+        <p>Hello! Welcome to my personal portfolio! I am Neda, a PhD student at Vanderbilt University. My research focuses on systems neuroscience, computational modeling of the human brain, and machine learning applications in neuroimaging.</p>
+    </div>
+    <div class="about-image">
+        <img src="your-photo.jpg" alt="Neda Sardaripour">
+    </div>
 </section>
 
-<!-- Corrected Projects Section -->
-<section>
+<!-- Other sections hidden initially and revealed on scroll -->
+<section class="reveal">
     <h2>Projects</h2>
     <div class="row">
         <div class="col-md-4">
@@ -74,8 +106,7 @@
     </div>
 </section>
 
-<!-- Project Description List Section -->
-<section>
+<section class="reveal">
     <h2>Additional Projects</h2>
     <ul>
         <li><strong>Neuroimaging and Genetics Integration:</strong> Investigating the link between brain networks and gene networks.</li>
@@ -85,13 +116,13 @@
 </section>
 
 <!-- Resume Section -->
-<section class="resume">
+<section class="resume reveal">
     <h2>Resume</h2>
     <p>You can download my resume as a PDF by clicking the link below:</p>
     <a href="files/Neda_Sardaripour_Resume.pdf" class="resume-download" download>Download My Resume</a>
 </section>
 
-<section>
+<section class="reveal">
     <h2>Contact</h2>
     <p>You can reach me at: <a href="mailto:neda.sardaripour@gmail.com">neda.sardaripour@gmail.com</a></p>
 </section>
@@ -102,6 +133,29 @@
 
 <!-- Bootstrap JS (Optional for interactive elements like dropdowns) -->
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
+
+<!-- JavaScript for Scroll Reveal -->
+<script>
+    // Function to reveal sections when scrolling
+    function reveal() {
+        var reveals = document.querySelectorAll('.reveal');
+
+        for (var i = 0; i < reveals.length; i++) {
+            var windowHeight = window.innerHeight;
+            var elementTop = reveals[i].getBoundingClientRect().top;
+            var elementVisible = 150;
+
+            if (elementTop < windowHeight - elementVisible) {
+                reveals[i].classList.add('show');
+            }
+        }
+    }
+
+    window.addEventListener('scroll', reveal);
+
+    // Trigger initial reveal on load
+    reveal();
+</script>
 
 </body>
 </html>
