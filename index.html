@@ -6,6 +6,7 @@
     <title>Neda Sardaripour's Portfolio</title>
 
     <style>
+        /* General body styling */
         body {
             font-family: Arial, sans-serif;
             margin: 0;
@@ -13,9 +14,11 @@
             display: flex;
             flex-direction: column;
             min-height: 100vh;
+            background-color: #f7f9fc;
+            color: #333;
         }
 
-        /* Sidebar navigation */
+        /* Sidebar navigation styling */
         .sidebar {
             background-color: #2c3e50;
             color: white;
@@ -34,11 +37,11 @@
         .sidebar a {
             display: block;
             color: white;
-            padding: 20px;
+            padding: 15px;
             text-decoration: none;
-            font-size: 18px;
+            font-size: 16px;
             text-transform: uppercase;
-            margin-bottom: 10px;
+            transition: all 0.3s ease;
         }
 
         .sidebar a.active, .sidebar a:hover {
@@ -47,6 +50,7 @@
             background-color: #34495e;
         }
 
+        /* Main content area styling */
         .content {
             margin-left: 260px;
             padding: 50px;
@@ -54,14 +58,28 @@
             flex-grow: 1;
         }
 
-        .content h1, .content h2, .content p {
-            margin-bottom: 20px;
+        .content h2 {
+            font-size: 28px;
+            color: #34495e;
+            margin-bottom: 15px;
+            border-bottom: 2px solid #f9aa33;
+            display: inline-block;
         }
 
+        .content p, .content ul {
+            line-height: 1.6;
+        }
+
+        .content ul {
+            padding-left: 20px;
+        }
+
+        /* About section styling */
         .content .about-container {
             display: flex;
             align-items: center;
             justify-content: space-between;
+            margin-bottom: 50px;
         }
 
         .content .about-text {
@@ -69,26 +87,28 @@
         }
 
         .content .about-image {
-            width: 40%;  /* Increased the width to make the image bigger */
-            max-width: 400px;  /* Set a larger max-width */
+            width: 40%;
+            max-width: 400px;
         }
 
         .content .about-image img {
-            width: 100%;  /* Ensure the image takes up full width */
+            width: 100%;
             border-radius: 10px;
+            box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
         }
 
-        /* Bold effect on titles in sidebar as you scroll */
+        /* Section styling */
         section {
-            margin-bottom: 100px;
+            margin-bottom: 60px;
         }
 
+        /* Footer styling */
         footer {
-            background-color: #000; /* Black background */
-            color: #999; /* Light gray text */
-            padding: 10px 0; /* Small padding */
+            background-color: #2c3e50;
+            color: #999;
+            padding: 20px 0;
             text-align: center;
-            font-size: 12px; /* Smaller text size */
+            font-size: 14px;
         }
 
         .resume-download {
@@ -97,22 +117,41 @@
             padding: 10px 20px;
             text-decoration: none;
             border-radius: 5px;
+            transition: background-color 0.3s ease;
         }
 
         .resume-download:hover {
             background-color: #5c45a0;
         }
 
-        /* Scroll reveal sections hidden by default */
+        /* Reveal effect styling */
         .reveal {
             opacity: 0;
-            transform: translateY(100px);
+            transform: translateY(20px);
             transition: all 0.6s ease-in-out;
         }
 
         .reveal.show {
             opacity: 1;
             transform: translateY(0);
+        }
+
+        /* Project items styling */
+        .project-item {
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+        }
+
+        .project-item ul {
+            margin-top: 10px;
+        }
+
+        /* Skills list styling */
+        #skills ul li {
+            margin-bottom: 10px;
         }
     </style>
 </head>
@@ -162,65 +201,59 @@
         </div>
     </section>
 
-<!-- Projects Section -->
-<section id="projects" class="reveal">
-    <h2>Projects</h2>
-    <div class="project-item">
-        <h3>Transcriptomic and Cellular Basis of Brain Network Individuality</h3>
-        <p>PhD Project | Ongoing</p>
-        <ul>
-            <li>Multimodal Multiscale Data Integration: Structural MRI, fMRI, Diffusional MRI, Gene-expression, Electronic Health Record, Cell-types</li>
-            <li>Developing data-driven analytical pipelines</li>
-            <li>Applying explainable Machine Learning and foundation models for brain network data exploration</li>
-            <li>Implementing statistical validation techniques </li>
-        </ul>
-    </div>
-
-  <div class="project-item">
-    <h3>GeneExpression and Neuroimaging Integration</h3>
-    <p><a href="https://doi.org/10.1371/journal.pbio.3002782" target="_blank">PLOS Biology, September 2024</a> | Project Period: 2021 - 2024</p>
-    <ul>
-        <li>Built automated data curation, time-series and image processing, and feature extraction on a large-scale dataset</li>
-        <li>Developed a framework for brain region-specific data exploration</li>
-    </ul>
-</div>
-
-
-    <div class="project-item">
-        <h3>Visual System Dysfunction in Multiple Sclerosis (MS) Patients</h3>
-        <p><a href="https://doi.org/10.1101/2022.09.12.506825" target="_blank">BioRxiv, September 2022 </a> | Project Period: 2018 - 2020</p>
-        <ul>
-            
-            <li>Designed and implemented imaging protocols and visual stimulation tasks</li>
-            <li>Performed data curation, preprocessing, and statistical analysis</li>
-            <li>Identified the functional impairment in visual pathways of MS patients</li>
-        </ul>
-    </div>
-    
+    <!-- Projects Section -->
+    <section id="projects" class="reveal">
+        <h2>Projects</h2>
+        <div class="project-item">
+            <h3>Transcriptomic and Cellular Basis of Brain Network Individuality</h3>
+            <p>PhD Project | Ongoing</p>
+            <ul>
+                <li>Multimodal data integration: Structural MRI, fMRI, Diffusional MRI, Gene-expression</li>
+                <li>Developed data-driven analytical pipelines</li>
+                <li>Applied explainable Machine Learning for brain network exploration</li>
+                <li>Implemented statistical validation techniques</li>
+            </ul>
+        </div>
 
         <div class="project-item">
-    <h3>Unsupervised ECG Analysis, Segmentation, and Abnormality Detection</h3>
-    <ul>
-        <li>Optimized preprocessing pipeline for classification of healthy vs. diseased groups</li>
-    </ul>
-    <p>Related Publications</a> | Project Period: 2021 - 2024</p>
-    <ul>
-        <li>
-            <a href="https://doi.org/10.1109/RBME.2022.3154893" target="_blank">
-                "Unsupervised ECG Analysis. " <em>IEEE Reviews in BME</em>, February 2022.
-            </a>
-        </li>
-        <li>
-            <a href="https://doi.org/10.1101/2024.05.22.24307764" target="_blank">
-                "XplainScar. " <em>MedRxiv, May 2024</em> .
-            </a>
-        </li>
-    </ul>
-</div>
+            <h3>GeneExpression and Neuroimaging Integration</h3>
+            <p><a href="https://doi.org/10.1371/journal.pbio.3002782" target="_blank">PLOS Biology, September 2024</a> | Project Period: 2021 - 2024</p>
+            <ul>
+                <li>Automated data curation, time-series processing, and feature extraction</li>
+                <li>Developed framework for brain region-specific data exploration</li>
+            </ul>
+        </div>
 
-    
-</section>
+        <div class="project-item">
+            <h3>Visual System Dysfunction in Multiple Sclerosis (MS) Patients</h3>
+            <p><a href="https://doi.org/10.1101/2022.09.12.506825" target="_blank">BioRxiv, September 2022 </a> | Project Period: 2018 - 2020</p>
+            <ul>
+                <li>Designed imaging protocols and visual tasks</li>
+                <li>Performed data curation, preprocessing, and analysis</li>
+                <li>Identified functional impairment in visual pathways of MS patients</li>
+            </ul>
+        </div>
 
+        <div class="project-item">
+            <h3>Unsupervised ECG Analysis, Segmentation, and Abnormality Detection</h3>
+            <ul>
+                <li>Optimized preprocessing pipeline for classification of healthy vs. diseased groups</li>
+            </ul>
+            <p>Related Publications | Project Period: 2021 - 2024</p>
+            <ul>
+                <li>
+                    <a href="https://doi.org/10.1109/RBME.2022.3154893" target="_blank">
+                        "Unsupervised ECG Analysis." <em>IEEE Reviews in BME</em>, February 2022.
+                    </a>
+                </li>
+                <li>
+                    <a href="https://doi.org/10.1101/2024.05.22.24307764" target="_blank">
+                        "XplainScar." <em>MedRxiv, May 2024</em>.
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </section>
 
     <!-- Skills Section -->
     <section id="skills" class="reveal">
@@ -231,13 +264,6 @@
             <li><strong>Libraries and Frameworks:</strong> Pandas, NumPy, Matplotlib, Scikit-learn, Keras, PyTorch</li>
         </ul>
     </section>
-    
-    <style>
-        /* Add space between the list items */
-        #skills ul li {
-            margin-bottom: 10px; /* Adjust the value as needed */
-        }
-    </style>
 
     <!-- Resume Section -->
     <section id="resume" class="resume reveal">
