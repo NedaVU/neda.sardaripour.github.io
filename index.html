@@ -124,30 +124,33 @@
             background-color: #5c45a0;
         }
 
-        /* Reveal effect styling */
-        .reveal {
-            opacity: 0;
-            transform: translateY(20px);
-            transition: all 0.6s ease-in-out;
-        }
-
-        .reveal.show {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
         /* Project items styling */
         .project-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
             background-color: white;
             padding: 20px;
             border-radius: 10px;
             box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
             margin-bottom: 20px;
         }
-
-        .project-item ul {
-            margin-top: 10px;
+        
+        .project-content {
+            width: 60%;
         }
+        
+        .project-image {
+            width: 35%;
+            max-width: 200px;
+        }
+        
+        .project-image img {
+            width: 100%;
+            border-radius: 10px;
+            box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
+        }
+    
 
         /* Skills list styling */
         #skills ul li {
@@ -175,7 +178,7 @@
             <p style="font-size: 20px; line-height: 1.8;">
                 Hello! Welcome to my personal portfolio!<br><br>
                 
-                I am Neda, a PhD Candidate in the Biomedical Engineering Department at Vanderbilt University.<br><br>
+                I am Neda (pronounced "Neh-dah"), a PhD Candidate in the Biomedical Engineering Department at Vanderbilt University.<br><br>
                 
                 My research focuses on Systems Neuroscience, Computational Modeling of the Human Brain, and Machine Learning applications for advanced analysis of Biosignals, Genomics, and Neuroimaging. <br><br>
                
@@ -218,10 +221,12 @@
         </div>
     </section>
 
-    <!-- Projects Section -->
-    <section id="projects" class="reveal">
-        <h2>Projects</h2>
-        <div class="project-item">
+<!-- Projects Section -->
+<section id="projects" class="reveal">
+    <h2>Projects</h2>
+    
+    <div class="project-item">
+        <div class="project-content">
             <h3>Transcriptomic and Cellular Basis of Brain Network Individuality</h3>
             <p>PhD Project | Ongoing</p>
             <ul>
@@ -231,8 +236,13 @@
                 <li>Implemented statistical validation techniques</li>
             </ul>
         </div>
+        <div class="project-image">
+            <img src="path/to/your/image1.jpg" alt="Project Image 1">
+        </div>
+    </div>
 
-        <div class="project-item">
+    <div class="project-item">
+        <div class="project-content">
             <h3>GeneExpression and Neuroimaging Integration</h3>
             <p><a href="https://doi.org/10.1371/journal.pbio.3002782" target="_blank">PLOS Biology, September 2024</a> | Project Period: 2021 - 2024</p>
             <ul>
@@ -240,8 +250,13 @@
                 <li>Developed framework for brain region-specific data exploration</li>
             </ul>
         </div>
+        <div class="project-image">
+            <img src="path/to/your/image2.jpg" alt="Project Image 2">
+        </div>
+    </div>
 
-        <div class="project-item">
+    <div class="project-item">
+        <div class="project-content">
             <h3>Visual System Dysfunction in Multiple Sclerosis (MS) Patients</h3>
             <p><a href="https://doi.org/10.1101/2022.09.12.506825" target="_blank">BioRxiv, September 2022 </a> | Project Period: 2018 - 2020</p>
             <ul>
@@ -250,8 +265,13 @@
                 <li>Identified functional impairment in visual pathways of MS patients</li>
             </ul>
         </div>
+        <div class="project-image">
+            <img src="path/to/your/image3.jpg" alt="Project Image 3">
+        </div>
+    </div>
 
-        <div class="project-item">
+    <div class="project-item">
+        <div class="project-content">
             <h3>Unsupervised ECG Analysis, Segmentation, and Abnormality Detection</h3>
             <ul>
                 <li>Optimized preprocessing pipeline for classification of healthy vs. diseased groups</li>
@@ -270,7 +290,12 @@
                 </li>
             </ul>
         </div>
-    </section>
+        <div class="project-image">
+            <img src="path/to/your/image4.jpg" alt="Project Image 4">
+        </div>
+    </div>
+</section>
+
 
     <!-- Skills Section -->
     <section id="skills" class="reveal">
